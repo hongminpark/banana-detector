@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
 ("../../node_modules/@types/estree/index.d");
 
 const bananas = [
@@ -22,6 +23,9 @@ const bananas = [
 ];
 
 const Home: NextPage = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [clickedId, setClickedId] = useState(0);
+
   return (
     <>
       <Head>
@@ -37,10 +41,13 @@ const Home: NextPage = () => {
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
             {bananas.map((banana, i) => (
               <div key={i} className="md:max-w-xs max-w-xxs">
-                {/* TODO - z stack 으로 ?  */}
                 <img
-                  className="aspect-square w-full object-contain brightness-0 filter hover:brightness-100"
+                  className="aspect-square w-full object-contain brightness-0 filter hover:cursor-pointer hover:brightness-100"
                   src={banana}
+                  onClick={() => {
+                    setClickedId(i);
+                    setShowModal(true);
+                  }}
                 />
                 <div className="text-light py-4 text-center font-normal">{`anonymous banana ${
                   i + 1
@@ -50,6 +57,23 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center">
+          <div className="fixed inset-0 bg-black opacity-90" />
+          <div className="max-w-200 relative w-3/5">
+            <div className="p-4">
+              <img
+                className="aspect-square w-full object-contain"
+                src={bananas[clickedId]}
+                onClick={() => setShowModal(false)}
+              />
+              <div className="py-4 text-center text-xl font-normal text-white">{`anonymous banana ${
+                clickedId + 1
+              }`}</div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
 
     // Dark mode
