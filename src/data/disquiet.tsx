@@ -107,17 +107,37 @@ const objects = [
   {
     image:
       "https://xwfxxufbxiguamirfeye.supabase.co/storage/v1/object/public/disquiet/ybshat.png",
-    title: "jonghan's hat",
+    title: "Jonghan's hat",
+  },
+  {
+    image:
+      "https://xwfxxufbxiguamirfeye.supabase.co/storage/v1/object/public/disquiet/jonghanshat_2.png",
+    title: "Jonghan's hat 2",
   },
   {
     image:
       "https://xwfxxufbxiguamirfeye.supabase.co/storage/v1/object/public/disquiet/ybsidentitycard.png",
-    title: "jonghan's identity card",
+    title: "Jonghan's identity card",
   },
   {
     image:
       "https://xwfxxufbxiguamirfeye.supabase.co/storage/v1/object/public/disquiet/thingkingyb.png",
-    title: "thinking jonghan",
+    title: "thinking Jonghan",
+  },
+  {
+    image:
+      "https://xwfxxufbxiguamirfeye.supabase.co/storage/v1/object/public/disquiet/DF22EE69-27ED-44CA-BBD4-84B6ACDCCECF.png",
+    title: "Letter from Jay",
+  },
+  {
+    image:
+      "https://xwfxxufbxiguamirfeye.supabase.co/storage/v1/object/public/disquiet/letterfromjay2.png",
+    title: "Letter from Jay 2",
+  },
+  {
+    image:
+      "https://xwfxxufbxiguamirfeye.supabase.co/storage/v1/object/public/disquiet/lostjay.png",
+    title: "Lost Jay",
   },
   {
     image:
@@ -198,11 +218,6 @@ const objects = [
     image:
       "https://xwfxxufbxiguamirfeye.supabase.co/storage/v1/object/public/disquiet/C0D1F680-1CCF-402D-8341-1B2BBE51D4FB_1_102_o.jpeg",
     title: "opsync",
-  },
-  {
-    image:
-      "https://xwfxxufbxiguamirfeye.supabase.co/storage/v1/object/public/disquiet/DF22EE69-27ED-44CA-BBD4-84B6ACDCCECF.png",
-    title: "Letter from Jay",
   },
   {
     image:
