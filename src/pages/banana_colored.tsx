@@ -1,42 +1,61 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import bananas from "y/data/bananas";
 ("../../node_modules/@types/estree/index.d");
 
-const Home: NextPage = () => {
+const BananaColored: NextPage = () => {
+  const router = useRouter();
   const [showBananaModal, setShowBananaModal] = useState(false);
   const [showWhyModal, setShowWhyModal] = useState(false);
+  const [bananaId, setBananaId] = useState(0);
 
   return (
     <>
       <Head>
         <title>not banana</title>
         <meta name="description" content="Banana Detector" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="relative flex min-h-screen flex-col items-center">
+        {/* TODO - concept FBI 컨셉 ?  */}
         <div className="">
-          <h1 className="py-4 text-center text-8xl font-extrabold tracking-tighter">
-            not banana
+          <h1 className="py-4 text-center text-6xl font-extrabold tracking-tighter">
+            NOT BANANA
           </h1>
+          {/* <h1 className="font-condensed py-2 text-center text-2xl font-extrabold tracking-tighter">
+            NOT BANANA
+          </h1> */}
         </div>
         <div className="px-4 text-center text-[1.4rem] leading-5 tracking-tight"></div>
         <div className="container flex flex-col items-center justify-center gap-24 px-4 py-8 ">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
             {bananas.map((banana, i) => (
               <div key={i} className="md:max-w-xs max-w-xxs">
-                <Link href={`/banana/${i}`} passHref>
+                <Link href={`/banana/${bananaId}`} passHref>
                   <img
                     className="aspect-square w-full object-contain brightness-0 filter hover:cursor-pointer hover:brightness-100"
                     src={banana}
+                    onClick={() => {
+                      setBananaId(i);
+                      // setShowBananaModal(true);
+                      router.push(`/banana/${i}`);
+                    }}
                   />
                 </Link>
+
+                {/* <div className="text-light py-4 text-center font-normal">
+                  {i === 6 ? `Jenny's banana` : `anonymous banana ${i + 1}`}
+                </div> */}
               </div>
             ))}
           </div>
         </div>
+        {/* <div className={"absolute"}>
+          <DragAndDropImage />
+        </div> */}
         <button
           onClick={() => setShowWhyModal(true)}
           className="fixed bottom-8 right-8 border-2 border-black bg-white px-4 py-2 font-medium tracking-tighter text-black hover:border-white hover:bg-black hover:text-white"
@@ -44,7 +63,7 @@ const Home: NextPage = () => {
           Why banana ?
         </button>
       </main>
-      {/* {showBananaModal && (
+      {showBananaModal && (
         <div
           className="fixed inset-0 flex items-center justify-center"
           onClick={() => setShowBananaModal(false)}
@@ -62,7 +81,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
-      )} */}
+      )}
       {/* TODO - make scrollable */}
       {showWhyModal && (
         <div
@@ -88,4 +107,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default BananaColored;

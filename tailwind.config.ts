@@ -9,7 +9,6 @@ export default {
     maxWidth: {
       xxs: "16rem",
     },
-    extend: {},
   },
   plugins: [],
 } satisfies Config;
