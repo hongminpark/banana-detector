@@ -18,23 +18,29 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <main className="flex min-h-screen flex-col items-center bg-black">
-        <div className="flex h-screen flex-col gap-4 py-4 text-2xl font-light ">
+        <div className="flex h-screen flex-col gap-4 py-4 text-2xl font-light">
           <div className="box border-white py-4 text-white">artworks</div>
           <div>
-            <Link href="/banana">
-              <img
-                className="cursor-pointer object-contain"
-                src="https://ik.imagekit.io/hywxemgac/portfolio/not-banana-showcase.png?updatedAt=1684845453083"
-              />
-            </Link>
-          </div>
-          <div>
-            <Link href="/disquiet">
-              <img
-                className="cursor-pointer object-contain"
-                src="https://ik.imagekit.io/hywxemgac/portfolio/objects-in-disquiet-showcase.png?updatedAt=1684845450785"
-              />
-            </Link>
+            <div>
+              <Link href="/banana">
+                <img
+                  className="w-96 cursor-pointer object-contain"
+                  src="https://ik.imagekit.io/hywxemgac/portfolio/not-banana-showcase.png?updatedAt=1684845453083"
+                />
+              </Link>
+              <div className="text-2xl italic text-white">not banana, 2023</div>
+            </div>
+            <div>
+              <Link href="/disquiet">
+                <img
+                  className="w-96 cursor-pointer object-contain"
+                  src="https://ik.imagekit.io/hywxemgac/portfolio/objects-in-disquiet-showcase.png?updatedAt=1684845450785"
+                />
+              </Link>
+              <div className="text-2xl italic text-white">
+                objects in disquiet, 2023
+              </div>
+            </div>
           </div>
         </div>
       </main>{" "}
